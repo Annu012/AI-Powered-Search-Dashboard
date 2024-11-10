@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Search Dashboard</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Search Dashboard</h1>
+
+    <!-- File upload and Google Sheet input -->
+    <label>Upload CSV or enter Google Sheets URL:</label>
+    <input type="file" id="fileInput">
+    <input type="text" id="sheetUrlInput" placeholder="Google Sheets URL">
+
+    <label>Select Main Column:</label>
+    <select id="columnSelect"></select>
+
+    <label>Define Search Prompt:</label>
+    <input type="text" id="promptInput" placeholder="e.g., Find the email of {entity}">
+
+    <button onclick="performSearch()">Start Search</button>
+    <button onclick="downloadResults()">Download Results</button>
+
+    <div id="results"></div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
