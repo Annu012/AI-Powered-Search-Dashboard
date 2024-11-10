@@ -1,4 +1,4 @@
-AI-Powered Search Dashboard
+**AI-Powered Search Dashboard**
 
 "This project is a web-based application that allows users to upload a dataset (CSV or Google Sheet), define search queries with dynamic placeholders, and retrieve relevant information for each entity in a selected column. The app uses SerpAPI for web search and OpenAI's GPT-4 (or another LLM) to parse the search results and extract structured information based on the user-defined query."
 
