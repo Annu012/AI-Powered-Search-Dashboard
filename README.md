@@ -1,69 +1,120 @@
-**AI-Powered Search Dashboard**
+# AI-Powered Search Dashboard
 
-"This project is a web-based application that allows users to upload a dataset (CSV or Google Sheet), define search queries with dynamic placeholders, and retrieve relevant information for each entity in a selected column. The app uses SerpAPI for web search and OpenAI's GPT-4 (or another LLM) to parse the search results and extract structured information based on the user-defined query."
+## Overview
+The **AI-Powered Search Dashboard** is a web-based application designed to enhance data-driven insights by automating web searches and structuring results. This app allows users to upload datasets, define dynamic search prompts, and retrieve structured information using SerpAPI and OpenAI's GPT-4 (or another LLM). The results can then be downloaded in a CSV format for further analysis.
 
-**Features**
+---
 
-1 .Upload Dataset: Supports CSV file uploads or Google Sheets for data input.
+## Features
+1. **Upload Dataset:**  
+   Upload data from a CSV file or directly via a Google Sheets URL for processing.
+   
+2. **Customizable Search Prompts:**  
+   Define search prompts with placeholders for dynamic queries, such as `Find the email address of {entity}`.
 
-2 .Customizable Search Prompts: Allows users to define search prompts with placeholders for dynamic queries.
+3. **Automated Web Search:**  
+   Use SerpAPI to perform automated searches for each entity in a selected dataset column.
 
-3 .Automated Web Search: Uses SerpAPI to perform searches for each entity.
+4. **LLM Parsing:**  
+   Utilize OpenAI’s GPT-4 to extract and structure relevant data from web search results.
 
-4 .LLM Parsing: Leverages OpenAI's GPT-4 to parse and structure data from web search results.
+5. **Results Download:**  
+   Download structured search results as a CSV file for offline use.
 
-5 .Results Download: Download structured search results as a CSV file.
+---
 
-**Prerequisites**
+## Prerequisites
+To use the application, ensure you have the following:
+1. **SerpAPI API Key:**  
+   Sign up at [SerpAPI](https://serpapi.com/) and obtain an API key.
+   
+2. **OpenAI API Key:**  
+   Obtain your API key from [OpenAI](https://openai.com/).
+   
+3. **Google Sheets API Credentials (optional):**  
+   - Enable the Google Sheets API in the [Google Cloud Console](https://console.cloud.google.com/).  
+   - Download your `credentials.json` file for accessing Google Sheets.
 
-*SerpAPI API Key*: Sign up at SerpAPI and obtain an API key.
+---
 
-*OpenAI API Key*: Obtain an API key from OpenAI.
+## Installation and Setup
 
-*Google Sheets API*: If using Google Sheets, enable the Google Sheets API in the Google Cloud Console and download your credentials.json file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repository/ai-powered-search-dashboard.git
+   cd ai-powered-search-dashboard
+   ```
 
+2. Install required Python packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-**Usage**
+3. Set up environment variables:
+   - Create a `.env` file in the project root with the following:
+     ```
+     SERPAPI_KEY=your_serpapi_key
+     OPENAI_API_KEY=your_openai_key
+     GOOGLE_SHEETS_CREDENTIALS=path/to/credentials.json
+     ```
 
-1.Upload Data:
-   Upload a CSV file or provide a Google Sheets URL.
-   Once the data loads, select the main column containing entities for the search (e.g., "company").
+4. Run the application:
+   ```bash
+   python app.py
+   ```
+   The application will run locally at `http://localhost:5000`.
 
-2.Define Search Prompt
-   Enter a search prompt with placeholders, e.g., "Find the email address of {entity}".
-   The {entity} placeholder will be replaced by each value in the selected column.
+---
 
-3.Start Search
+## Usage
+1. **Upload Data:**  
+   - Upload a CSV file or provide a Google Sheets URL.  
+   - Select the column containing the entities you want to search for (e.g., `company`).
 
-  Click "Start Search" to initiate the automated search process.
-  The system will perform searches using SerpAPI and parse the results with OpenAI’s API.
+2. **Define Search Prompt:**  
+   - Enter a prompt with a placeholder `{entity}` for dynamic queries.  
+     Example: `Find the LinkedIn profile of {entity}`.
 
-4.View and Download Results
-  The results will display on the page.
-  Click "Download Results" to save the structured output as a CSV file.
+3. **Start Search:**  
+   - Click **Start Search** to perform automated searches using SerpAPI.  
+   - The system will process results using GPT-4 to extract and structure relevant information.
 
-**Technologies Used**
+4. **View and Download Results:**  
+   - View the structured search results on the dashboard.  
+   - Click **Download Results** to save the output as a CSV file.
 
-*Flask*: Backend framework to handle API requests and serve the frontend.
+---
 
-*SerpAPI*: Used for automated Google searches.
+## Technologies Used
+- **Flask:** Backend framework for serving the web application.  
+- **SerpAPI:** API for performing automated web searches.  
+- **OpenAI API:** GPT-4 integration for parsing and structuring search results.  
+- **Pandas:** For handling and processing CSV data.  
+- **Google Sheets API:** For reading data directly from Google Sheets.  
 
-*OpenAI API*: Leverages GPT-4 to parse and structure search results.
+---
 
-*Pandas*: For handling CSV files and data processing.
+## Notes
+- **Rate Limits:**  
+  Be mindful of rate limits for both SerpAPI and OpenAI. Adjust rate-limiting settings in `app.py` as necessary.
 
-*Google Sheets API*: To read data directly from Google Sheets if provided.
+- **Environment Variables:**  
+  Keep your `.env` file secure as it contains sensitive API keys.
 
-**Important Notes**
+- **Error Handling:**  
+  Ensure that your dataset is well-structured to avoid issues during processing.
 
-Rate Limits: Be mindful of API rate limits for both SerpAPI and OpenAI. Adjust rate limiting in app.py if needed.
+---
 
-Environment Variables: Keep your .env file secure as it contains sensitive API keys.
-
-Error Handling: Basic error handling is implemented, but ensure that CSV or Google Sheet data is well-structured.
-
-
-
-License
-
+## License
 This project is licensed under the MIT License.
+
+---
+
+## Contribution
+Contributions are welcome! Please fork the repository and submit a pull request with detailed explanations for your changes.  
+
+---
+
+## Contact
+For any questions or support, feel free to reach out at [anisa.shaikh01@gmail.com].  
